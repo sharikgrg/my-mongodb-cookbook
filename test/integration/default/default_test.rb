@@ -11,6 +11,17 @@ unless os.windows?
 end
 
 # This is an example test, replace it with your own test.
-describe port(80), :skip do
-  it { should_not be_listening }
+describe port('0.0.0.0', 27017) do
+  it { should be_listening }
+end
+
+describe package "mongodb-org" do
+  it { should be_installed }
+  its('version') { should match /3\./}
+end
+
+describe service "mongod" do
+  it { should be_installed }
+  it { should be_enabled }
+  it { should be_running}
 end
