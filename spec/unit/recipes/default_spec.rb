@@ -29,7 +29,7 @@ describe 'mongo::default' do
     end
 
     it 'should conf file in /etc/mongod.conf' do
-      expect(chef_run).to create_template "/etc/mongod.conf"
+      expect(chef_run).to create_template("/etc/mongod.conf").with_variables(proxy_port: 27017,  proxy_ip: "0.0.0.0")
     end
 
     it 'should create mongod.service template in /etc/systemd/system/mongod.service' do

@@ -19,6 +19,7 @@ apt_repository 'mongodb-org' do
   keyserver 'hkp://keyserver.ubuntu.com:80'
   key 'EA312927'
   action :add
+  notifies :restart, 'service[mongod]'
 end
 
 # directory '/data/' do
@@ -37,6 +38,7 @@ end
 
 template '/etc/mongod.conf' do
   source 'mongod.conf.erb'
+  variables(proxy_port: node['mongod']['proxy_port'], proxy_ip: node['mongod']['proxy_ip'])
   mode '0755'
   owner 'root'
   group 'root'
