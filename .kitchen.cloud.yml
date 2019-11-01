@@ -7,7 +7,7 @@ driver:
   #subnet
   subnet_id: subnet-018e9e3078d34571c
   associate_public_ip: true
-  aws_ssh_key_id: DevOpsStudents
+  aws_ssh_key_id: eng42-sh
 
 transport:
   # use our key from machine to access the test machine
