@@ -9,9 +9,9 @@ driver:
   associate_public_ip: true
   aws_ssh_key_id: eng42-sh
 
-  transport:
-    # use our key from machine to access the test machine
-    ssh_key: ~/.ssh/eng42-sh.pem
+transport:
+  # use our key from machine to access the test machine
+  ssh_key: ~/.ssh/eng42-sh.pem
 
 provisioner:
   name: chef_zero
