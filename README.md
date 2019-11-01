@@ -1,3 +1,3 @@
 # mongo
-:taco: :taco:
+:taco: :taco: :taco:
 TODO: Enter the cookbook description here.
